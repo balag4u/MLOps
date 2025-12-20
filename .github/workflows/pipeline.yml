@@ -56,7 +56,12 @@ jobs:
 
       - name: Install Dependencies
         run: pip install -r mlops/requirements.txt
-
+        
+      - name: Start MLflow Server 
+        run: | 
+          nohup mlflow ui --host 0.0.0.0 --port 5000 & # Run MLflow UI in the background 
+          sleep 5 # Wait for a moment to let the server start
+          
       - name: Model Training
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
