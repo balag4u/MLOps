@@ -25,12 +25,12 @@ mlflow.set_experiment("mlops-training-experiment")
 api = HfApi()
 
 # =====================================================================================
-# DATA PATHS FROM HUGGING FACE
+# DATA PATHS FROM HUGGING FACE (CORRECT)
 # =====================================================================================
 Xtrain_path = "hf://datasets/nsa9/bank-customer-churn/Xtrain.csv"
-Xtest_path = "hf://datasets/nsa9/bank-customer-churn/Xtest.csv"
-ytrain_path = "hf://datasets/nsa9/bank-customer-churn/ytrain.csv"  # fixed double slash
-ytest_path = "hf://datasets/nsa9/bank-customer-churn/ytest.csv"
+Xtest_path  = "hf://datasets/nsa9/bank-customer-churn/Xtest.csv"
+ytrain_path = "hf://datasets/nsa9/bank-customer-churn/ytrain.csv"
+ytest_path  = "hf://datasets/nsa9/bank-customer-churn/ytest.csv"
 
 Xtrain = pd.read_csv(Xtrain_path)
 Xtest = pd.read_csv(Xtest_path)
